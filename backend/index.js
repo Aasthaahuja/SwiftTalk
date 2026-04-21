@@ -15,7 +15,10 @@ const httpServer = createServer(app)
 
 export const io = new Server(httpServer, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'https://swifttalk-frontend-o1dr.onrender.com'  // 👈 add here too
+    ],
     credentials: true
   }
 })
@@ -58,7 +61,10 @@ io.on('connection', (socket) => {
 })
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://swifttalk-frontend-o1dr.onrender.com'  // 👈 add your frontend URL
+  ],
   credentials: true,
 }))
 app.use(express.json());
