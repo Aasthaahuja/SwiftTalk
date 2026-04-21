@@ -1,3 +1,4 @@
+import { BASE_URL } from '../config'
 import { createContext, useContext, useEffect, useState } from 'react'
 import { io } from 'socket.io-client'
 import { AuthContext } from './AuthContext'
@@ -12,7 +13,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (!user) return
 
-    const newSocket = io('http://localhost:3000', {
+    const newSocket = io(BASE_URL, {  // 👈 only this line changed
       query: { userId: user._id }
     })
 

@@ -1,3 +1,4 @@
+import { BASE_URL } from '../config'
 import { useState, useEffect, useRef, useContext } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext'
@@ -17,7 +18,7 @@ export default function ChatWindow({ selectedUser }) {
     const fetchMessages = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/message/${selectedUser._id}`,
+          `${BASE_URL}/api/message/${selectedUser._id}`,
           { withCredentials: true }
         )
         setMessages(res.data)
@@ -54,7 +55,7 @@ export default function ChatWindow({ selectedUser }) {
   const sendMessage = async (text) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/api/message/send/${selectedUser._id}`,
+        `${BASE_URL}/api/message/send/${selectedUser._id}`,
         { message: text }, { withCredentials: true }
       )
       setMessages(prev => [...prev, { ...res.data, seen: false }])

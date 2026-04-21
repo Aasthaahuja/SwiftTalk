@@ -1,3 +1,4 @@
+import { BASE_URL } from '../config'
 import { useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -18,7 +19,7 @@ export default function Register() {
     setError('')
     try {
       const res = await axios.post(
-        'http://localhost:3000/api/auth/register',
+        '${BASE_URL}/api/auth/register',
         form,
         { withCredentials: true }
       )

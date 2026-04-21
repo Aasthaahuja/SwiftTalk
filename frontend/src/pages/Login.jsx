@@ -1,3 +1,4 @@
+import { BASE_URL } from '../config'
 import { useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -16,7 +17,7 @@ export default function Login() {
     setError('')
     try {
       const res = await axios.post(
-        'http://localhost:3000/api/auth/login',
+        '${BASE_URL}/api/auth/login',
         form,
         { withCredentials: true }
       )

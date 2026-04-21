@@ -1,3 +1,4 @@
+import { BASE_URL } from '../config'
 import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext'
@@ -12,7 +13,7 @@ export default function Sidebar({ selectedUser, onSelectUser }) {
     const fetchUsers = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/user/search?search=${search}`,
+          `${BASE_URL}/api/user/search?search=${search}`,
           { withCredentials: true }
         )
         setUsers(res.data)
