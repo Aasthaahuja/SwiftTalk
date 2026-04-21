@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { SocketContext } from '../context/SocketContext'
+import { SocketContext } from '../context/socketContext'
 
 export default function UserCard({ user, isSelected, onClick }) {
   const { onlineUsers } = useContext(SocketContext)

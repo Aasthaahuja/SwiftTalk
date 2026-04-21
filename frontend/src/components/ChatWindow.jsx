@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext'
-import { SocketContext } from '../context/SocketContext'
+import { SocketContext } from '../context/socketContext'
 import MessageInput from './MessageInput'
 
 export default function ChatWindow({ selectedUser }) {
