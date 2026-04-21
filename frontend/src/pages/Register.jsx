@@ -19,7 +19,7 @@ export default function Register() {
     setError('')
     try {
       const res = await axios.post(
-        '${BASE_URL}/api/auth/register',
+        `${BASE_URL}/api/auth/register`,
         form,
         { withCredentials: true }
       )

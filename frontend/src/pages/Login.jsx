@@ -17,7 +17,7 @@ export default function Login() {
     setError('')
     try {
       const res = await axios.post(
-        '${BASE_URL}/api/auth/login',
+        `${BASE_URL}/api/auth/login`,
         form,
         { withCredentials: true }
       )
