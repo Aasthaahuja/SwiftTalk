@@ -4,7 +4,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import { AuthContext, AuthProvider } from './context/AuthContext'
-import { SocketProvider } from './context/SocketContext'
+import { SocketProvider } from './context/socketContext'
 
 function ProtectedRoute({ children }) {
   const { user } = useContext(AuthContext)
