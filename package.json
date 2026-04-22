@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js",
-    "build": "npm install && cd ../frontend && npm install && npm run build"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node backend/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

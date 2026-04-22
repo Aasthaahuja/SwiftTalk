@@ -67,6 +67,8 @@ app.use(cors({
     'https://swifttalk-frontend-o1dr.onrender.com'
   ],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }))
 app.use(express.json());
 app.use(cookieParser());
@@ -75,7 +77,9 @@ app.use('/api/message', messageRouter)
 app.use('/api/user', userRouter)
 
 // Serve frontend
+// The __dirname will be chat-app/backend, so frontend/dist is:
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend', 'dist', 'index.html'));
 });
