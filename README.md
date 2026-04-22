@@ -146,7 +146,6 @@ This app is deployed on **Render**:
 ## 👩‍💻 Author
 
 **Aastha Ahuja**  
-📧 [ahuja1200@gmail.com](mailto:ahuja1200@gmail.com)  
 🔗 [GitHub](https://github.com/Aasthaahuja)
 
 ---
